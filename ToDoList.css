@@ -1,0 +1,46 @@
+* {
+    background-color: rgb(234, 240, 239);
+    color: rgb(78, 69, 69);
+}
+
+.hidden {
+    visibility: hidden;
+    background-color: black;
+}
+
+h1 {
+    position: relative;
+    color: pink;    
+    text-align: center;
+    background-color: rgb(167, 160, 223);
+    padding: 2%; 
+    left: 40%;
+    width: 10%;
+    border-radius: 200%;
+}
+p {
+    display: block;
+}
+
+#begin {
+    position: relative;
+    text-align: center;
+    right: 3%;
+}
+
+#data {
+    background-color: white;
+    color: black;
+}
+button {
+    background-color: white;
+    color: black;
+}
+
+.newentry {
+    color: blueviolet;
+}
+ul li.clicked {
+    text-decoration: line-through;
+    color: brown;
+}

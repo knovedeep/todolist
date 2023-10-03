@@ -1,31 +1,29 @@
 
 
 function addToList(event) {
-    let input=document.getElementById("data").value;
-    let ul=document.getElementById("myList");
+    let listItemInput=document.getElementById("data").value;
+    let listElement=document.getElementById("myList");
 
-    let newLi = document.createElement("li");
-    newLi.textContent=input;
-    ul.append(newLi);
-    
-    newLi.className="newentry";
+    let newListEntry = document.createElement("li");
+    newListEntry.textContent=listItemInput + " (" + new Date().toLocaleString() + ")";
+    listElement.append(newListEntry);
 
-    newLi.addEventListener( 'click', function() {
-        this.className="clicked";
-    
-    });
-    newLi.addEventListener( 'click', function() {
+    newListEntry.className="cursor-pointer";
+
+    newListEntry.addEventListener( 'click', function() {
         setTimeout(function() {
-            newLi.remove();
-        },1000);
-        
+            newListEntry.remove();
+        },0);
+
     });
-};
-    
 
-let enterbutton=document.getElementById("data");
+    clearInput();
+}
 
-enterbutton.addEventListener("keypress", function(event) {
+
+let enterButton=document.getElementById("data");
+
+enterButton.addEventListener("keypress", function(event) {
     if (event.key==="Enter") {
         document.getElementById("button").click();
     }
@@ -35,13 +33,15 @@ let button=document.getElementById("button");
 
 button.addEventListener("click", addToList);
 
-function ClearInput() {
+let clearButton=document.getElementById("clearButton");
+
+function clearInput() {
     let getValue=document.getElementById("data");
-    if(getValue.value !="") {
+    if(getValue.value !=="") {
         getValue.value ="";
     }
-};
-button.addEventListener("click",ClearInput);
+}
+clearButton.addEventListener("click", clearInput);
 
 
 
